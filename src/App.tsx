@@ -4,9 +4,12 @@ import styled from "styled-components";
 import { Card } from "./components/Card";
 import axios from "axios";
 import { useState } from "react";
+import { Empty } from "./components/Empty";
+import { User } from "./utils/interface/User";
 
 export const App = () => {
-    const [user, setUser] = useState();
+    const [user, setUser] = useState<User>();
+
     const PesquisarUser = async () => {
         let loginNome = (
             document.getElementById("login-user") as HTMLInputElement
@@ -14,14 +17,16 @@ export const App = () => {
 
         await axios
             .get(`https://api.github.com/users/${loginNome}`)
-            .then((response: any) => {
-                console.log(response.data);
-                setUser(response.data ?? undefined);
+            .then((response) => {
+                const { data } = response;
+                setUser(data ?? undefined);
             })
             .catch((err) => {
                 console.log(err);
+                return;
             });
     };
+
     return (
         <>
             <Header />
@@ -45,13 +50,29 @@ export const App = () => {
                         </button>
                     </div>
                     <div className="">
-                        {/* <Card
-                            name={user?.name}
-                            company={user?.company}
-                            location={user?.location}
-                            email={user?.email}
-                            avatar_url={user?.avatar_url}
-                        ></Card> */}
+                        {user === undefined ? (
+                            <>
+                                <Empty />
+                            </>
+                        ) : (
+                            <>
+                                <Card
+                                    id={user?.id}
+                                    name={user?.name}
+                                    login={user?.login}
+                                    company={user?.company}
+                                    email={user?.email}
+                                    location={user?.location}
+                                    link_to_github={user?.link_to_github}
+                                    avatar_url={user?.avatar_url}
+                                    linkedin_url={user?.linkedin_url}
+                                    public_repos={user?.public_repos}
+                                    followers={user?.followers}
+
+                                />
+                            </>
+                        )}
+
                     </div>
                 </section>
             </BlankBoard>

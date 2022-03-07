@@ -50,46 +50,39 @@
     width: 74%;
     height: 100%;
     display: inline-block;
-    margin: 0;
+    margin: 4vh 0;
     padding: 0;
 }
 
 #name-area {
     width: 100%;
-    height: 35%;
+    height: auto;
     margin: 0;
     padding: 0 1vh;
     display: flex;
     justify-content: start;
     align-items: center;
+    font-size: 4vh;
 }
 
 #city-area {
     width: 100%;
-    height: 25%;
+    height: auto;
     margin: 0;
     padding: 0 1vh;
     display: flex;
     justify-content: start;
     align-items: center;
+    font-size: 2vh;
 }
 
 #company-area {
     width: 100%;
-    height: 25%;
+    height: auto;
     margin: 0;
     padding: 0 1vh;
     display: flex;
     justify-content: start;
     align-items: center;
-}
-
-#email-area {
-    width: 100%;
-    height: 15%;
-    margin: 0;
-    padding: 0 1vh;
-    display: flex;
-    justify-content: start;
-    align-items: center;
+    font-size: 2vh;
 }
