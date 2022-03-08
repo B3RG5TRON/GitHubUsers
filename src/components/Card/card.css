@@ -2,11 +2,11 @@
     margin: 4vh 0 0 0;
     padding: 4vh;
     border: none;
-    border-radius: 1vh;
-    background-color: white;
+    border-radius: 2vh;
+    background-color: #f0f0f0;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
-    height: 70vh;
+    height: auto;
 }
 
 #article-divisora {
@@ -17,14 +17,13 @@
 
 #left-area {
     display: flex;
-    border: 1px solid red;
     width: 50%;
     height: 100%;
 }
 
 #right-area {
     display: flex;
-    border: 1px solid green;
+    justify-content: flex-end;
     width: 50%;
     height: 100%;
 }
@@ -85,4 +84,103 @@
     justify-content: start;
     align-items: center;
     font-size: 2vh;
+}
+
+#stats-user{
+    width: 35%;
+    height: 40%;
+    background-color: #C4C4C4;
+    border-radius: 10px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.stats-divisor{
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    padding: 0.5vh;
+    display: inline-block;
+}
+
+.number-stats{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    font-weight: 700;
+    color: white;
+}
+
+.legend-stats{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6vh;
+    font-weight: 700;
+    color: white;
+}
+
+#Bio-area{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 2vh 0;
+}
+
+#title-bio{
+    width: 100%;
+    height: 20%;
+    margin: 0;
+    padding: 0 0 0 2vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#description-area{
+    width: 100%;
+    height: auto;
+    padding: 0 2vh;
+    margin: 0;
+    font-size: 1.6vh;
+    color: #727272;
+    text-align: justify;
+    word-break: break-word;
+}
+
+#social-media-area{ 
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    padding: 2vh 2vh;
+    margin: 0;
+}
+
+#linkedin_icon{
+    font-size: 6vh;
+    color: #0A66C2;
+    margin: 0 2vh 0 0;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+#github_icon{
+    font-size: 6vh;
+    margin: 0 2vh 0 0;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+#linkedin_icon:hover, #github_icon:hover{
+    transform: scale(1.15);
 }

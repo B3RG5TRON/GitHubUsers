@@ -1,4 +1,7 @@
+import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import { useEffect } from "react";
 import "./card.css";
 
 type CardProps = {
@@ -12,10 +15,16 @@ type CardProps = {
     email: string,
     linkedin_url: string,
     public_repos: number,
-    followers: number
+    followers: number,
+    bio?: string
 };
 
-export const Card = ({ id, login, name, company, location, link_to_github, avatar_url, email, linkedin_url, public_repos, followers }: CardProps) => {
+export const Card = ({ id, login, name, company, location, link_to_github, avatar_url, email, linkedin_url, public_repos, followers, bio }: CardProps) => {
+
+    useEffect(() => {
+        console.log(linkedin_url)
+    }, [])
+
     return (
         <div id="background">
             <article id="article-divisora">
@@ -29,10 +38,27 @@ export const Card = ({ id, login, name, company, location, link_to_github, avata
                         <p id="company-area">{company}</p>
                     </div>
                 </div>
-                <div id="right-area"></div>
+                <div id="right-area">
+                    <div id="stats-user">
+                        <div className="stats-divisor">
+                            <h4 className="number-stats">{public_repos}</h4>
+                            <p className="legend-stats"> Public Repos</p>
+                        </div>
+                        <div className="stats-divisor">
+                            <h4 className="number-stats">{followers}</h4>
+                            <p className="legend-stats"> Followers </p>
+                        </div>
+                    </div>
+                </div>
             </article>
-            <div></div>
-            <div></div>
+            <div id="Bio-area">
+                <h4 id="title-bio">Bio:</h4>
+                <p id="description-area">{bio}</p>
+            </div>
+            <div id="social-media-area">
+                <FontAwesomeIcon icon={faLinkedin} id="linkedin_icon" onClick={(e) => window.open(`${linkedin_url}`, '_blank')}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faGithubSquare} id="github_icon" onClick={(e) => window.open(`${link_to_github}`, '_blank')}></FontAwesomeIcon>
+            </div>
         </div>
     );
 };

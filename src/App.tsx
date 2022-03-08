@@ -63,11 +63,12 @@ export const App = () => {
                                     company={user?.company}
                                     email={user?.email}
                                     location={user?.location}
-                                    link_to_github={user?.link_to_github}
+                                    link_to_github={user?.html_url}
                                     avatar_url={user?.avatar_url}
-                                    linkedin_url={user?.linkedin_url}
+                                    linkedin_url={user?.blog}
                                     public_repos={user?.public_repos}
                                     followers={user?.followers}
+                                    bio={user?.bio}
 
                                 />
                             </>
