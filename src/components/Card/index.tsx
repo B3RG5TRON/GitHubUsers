@@ -60,5 +60,6 @@ export const Card = ({ id, login, name, company, location, link_to_github, avata
                 <FontAwesomeIcon icon={faGithubSquare} id="github_icon" onClick={(e) => window.open(`${link_to_github}`, '_blank')}></FontAwesomeIcon>
             </div>
         </div>
+
     );
 };

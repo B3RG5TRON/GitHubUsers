@@ -1,0 +1,25 @@
+#background-bottomheader{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 2vh 0  ;
+}
+
+#background-bottomheader h4, #background-bottomheader p {
+    margin: 0;
+    padding: 0;
+}
+
+#title-bottomheader{
+    font-size: 2.6vh;
+    color: #9e9e9e;
+}
+
+#user-from-github{
+    font-size: 2.6vh;
+    color: #6d6d6d;
+    margin-left: 1vh !important;
+}
